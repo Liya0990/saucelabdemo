@@ -1,6 +1,7 @@
 package tests;
 
 import base.UserLogin;
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,6 +16,7 @@ import utils.Automation;
 import utils.DriverUtil;
 
 import utils.Automation.*;
+import utils.TestDetector;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -25,6 +27,7 @@ import java.util.Map;
 public class SmokeTest extends UserLogin {
    private String username="standard_user";
    private String password="secret_sauce";
+   private static ExtentTest tcs= TestDetector.getCurrentTestCaseSection();
 
     // task 1 (NavigatetoSaucedemoVerifythetitleasSwagLabs)
     // task 3(Loginwithstandard_user&secret_sauce)
@@ -160,7 +163,7 @@ public class SmokeTest extends UserLogin {
 
 
     }
-
+    //Task 15(Verifythepricesortedproperly)
     @Test
     public void verifyPriceSortedProperly(){
         // ---- Test  date

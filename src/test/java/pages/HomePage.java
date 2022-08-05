@@ -1,15 +1,18 @@
 package pages;
 
+import com.aventstack.extentreports.ExtentTest;
 import org.bouncycastle.crypto.agreement.srp.SRP6Client;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.Automation;
+import utils.TestDetector;
 
 import java.util.List;
 
 import static utils.Automation.*;
 
 public class HomePage {
+    private static ExtentTest tcs= TestDetector.getCurrentTestCaseSection();
 
     // Web Element location
     By loc_dropdown= By.cssSelector(".product_sort_container");
@@ -29,16 +32,24 @@ public class HomePage {
     }
     public void addFirstProductToChart(){
         click(loc_first_product);
+        tcs.info("added first product to chat");
     }
     public void addLastProductToChart(){
         click(loc_last_product);
+        tcs.info("added last product to chart");
     }
 
     public void RemoveTheFirstProductFromTheCart(){
         click(loc_remove_first_product);
+        tcs.info("remove first product from the chart");
     }
     public boolean verifyTheAddedProductIsAvailableInChart(){
-        return isVisible(loc_product_added_in_char_name);
+        boolean result= isVisible(loc_product_added_in_char_name);
+        if(result){
+            tcs.info("verified the added product is availeble in chart");
+        }
+            return result;
+
     }
 
 
@@ -48,10 +59,12 @@ public class HomePage {
 
     public void clickCart(){
         click(loc_cart);
+        tcs.info("user licks cart icon");
     }
 
     public  void clickContinueShoppingButton(){
         click(loc_continue_shopping_button);
+        tcs.info("user clicks on continue shopping button");
     }
 
 
