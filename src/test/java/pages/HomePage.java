@@ -2,7 +2,10 @@ package pages;
 
 import org.bouncycastle.crypto.agreement.srp.SRP6Client;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import utils.Automation;
+
+import java.util.List;
 
 import static utils.Automation.*;
 
@@ -15,7 +18,8 @@ public class HomePage {
     By loc_cart_badge=By.cssSelector(".shopping_cart_badge");
     By loc_cart=By.cssSelector(".shopping_cart_link");
     By loc_continue_shopping_button=By.cssSelector("button#continue-shopping");
-    By loc_backpack_remove_button=By.cssSelector("button#remove-sauce-labs-backpack");
+    By loc_remove_first_product=By.cssSelector("button#remove-sauce-labs-backpack");
+    By loc_product_added_in_char_name=By.cssSelector(".inventory_item_name");
 
 
     // User Actions
@@ -30,6 +34,14 @@ public class HomePage {
         click(loc_last_product);
     }
 
+    public void RemoveTheFirstProductFromTheCart(){
+        click(loc_remove_first_product);
+    }
+    public boolean verifyTheAddedProductIsAvailableInChart(){
+        return isVisible(loc_product_added_in_char_name);
+    }
+
+
     public String getCartBadgeValue(){
         return getText(loc_cart_badge);
     }
@@ -42,15 +54,15 @@ public class HomePage {
         click(loc_continue_shopping_button);
     }
 
-    public void clickRemoveBackpackButton(){
-        click(loc_backpack_remove_button);
-    }
 
     public void selectByOption(String option){
         selectDropDown(loc_dropdown,option);
     }
 
+}// end: class
 
 
 
-}
+
+
+

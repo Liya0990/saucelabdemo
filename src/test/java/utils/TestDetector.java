@@ -4,6 +4,9 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -51,8 +54,9 @@ public class TestDetector implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult testCase){
         testCaseSection.pass("Test case passed");
-//        String screenshotPic=DriverUtil.takeScreenshot();
-//        testCaseSection.addScreenCaptureFromBase64String(screenshotPic);
+        WebDriver driver = DriverUtil.getDriver();
+        String picture = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+        testCaseSection.addScreenCaptureFromBase64String(picture);
     }
 
     @Override
@@ -67,6 +71,7 @@ public class TestDetector implements ITestListener {
     public void onTestSkipped(ITestResult testCase){
         testCaseSection.skip("test case has been blocked");
     }
+
 
 
 }//end :: class

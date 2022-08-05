@@ -8,7 +8,7 @@ public class LoginPage {
     private final String url="https://www.saucedemo.com/";
 
     // ----Web element locations-----//
-    private final  By loc_title= By.xpath("/html//div[@id='header_container']//div[@class='app_logo']");
+    private final  By loc_title= By.cssSelector(".login_logo");
     private final By loc_username=By.cssSelector("input#user-name");
     private final By loc_password=By.cssSelector("input#password");
     private final By loc_loginButton=By.cssSelector("input#login-button");
@@ -40,6 +40,10 @@ public class LoginPage {
 
     public void clickLoginButton(){
         click(loc_loginButton);
+    }
+
+    public boolean loginPageTitleIsVisible(){
+        return  isVisible(loc_title);
     }
 
 

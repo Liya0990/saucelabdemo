@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Automation {
 
@@ -96,6 +98,19 @@ public class Automation {
 
 
     }
+    public static List<Double> getPriceList(By location){
+        List<WebElement> dollarPriceList=
+                (List<WebElement>) waits.until
+                        (ExpectedConditions.visibilityOfElementLocated(location));
+
+        List<Double> priceList=new ArrayList<>();
+        for(WebElement p : dollarPriceList){
+            priceList.add(Double.valueOf(p.getText().replace("$","")));
+        }
+        return priceList;
+
+    }
+
 
 
 
