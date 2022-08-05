@@ -25,6 +25,10 @@ public class LoginPage {
         return result;
     }
 
+    public boolean loginPageTitleIsVisible(){
+        return isVisible(loc_title);
+    }
+
     public String getLoginButtonText(){
         return getText(loc_loginButton);
 

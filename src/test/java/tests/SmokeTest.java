@@ -41,41 +41,43 @@ public class SmokeTest {
         login.enterPassword(password);
         login.clickLoginButton();
 
-        String actual_title=login.getTitle();
-        System.out.println(actual_title);
-       
-//        String loginButtonText=login.getLoginButtonText();
-//
-//        boolean isLoginButtonTextCapitalized =
-//                Automation.isStringUpperCase(loginButtonText);
-//
-//        HomePage homePage=new HomePage();
-//        String textOfDefaultDropDown=homePage.getTextOfDefaultDropDown();
-//
-//        //-------------------------------------
-//        homePage.addFirstProductToChart();
-//        String productInCart=homePage.getCartBadgeValue();
-//        Boolean isEqualToOne=productInCart.equals("1");
-//        homePage.addLastProductToChart();
-//        boolean isEqualToTwo=productInCart.equals("2");
-//
-//
-//
-//        //?????????????????????
-//        //?????????????????????
-//        //?????????????????????
-//
-//
-//        homePage.clickCart();
-//        //????
-//        homePage.clickContinueShoppingButton();
-//        homePage.clickRemoveBackpackButton();
-//        homePage.clickContinueShoppingButton();
-//        homePage.selectByOption("Price (low to high)");
-//
-////        Map<int ,int >price=new Map<int, int>() {
-////        }
-//
+//        String actual_title=login.getTitle();
+//        System.out.println(actual_title);
+
+        boolean isLoginPageTitleVisible=login.loginPageTitleIsVisible();
+
+        String loginButtonText=login.getLoginButtonText();
+
+        boolean isLoginButtonTextCapitalized =
+                Automation.isStringUpperCase(loginButtonText);
+
+        HomePage homePage=new HomePage();
+        String textOfDefaultDropDown=homePage.getTextOfDefaultDropDown();
+
+        //-------------------------------------
+        homePage.addFirstProductToChart();
+        String productInCart=homePage.getCartBadgeValue();
+        Boolean isEqualToOne=productInCart.equals("1");
+        homePage.addLastProductToChart();
+        boolean isEqualToTwo=productInCart.equals("2");
+
+
+
+        //?????????????????????
+        //?????????????????????
+        //?????????????????????
+
+
+        homePage.clickCart();
+        //????
+        homePage.clickContinueShoppingButton();
+        homePage.clickRemoveBackpackButton();
+        homePage.clickContinueShoppingButton();
+        homePage.selectByOption("Price (low to high)");
+
+//        Map<int ,int >price=new Map<int, int>() {
+//        }
+
 
 
 
@@ -92,11 +94,11 @@ public class SmokeTest {
 
         //----Test Assertion
 
-//        Assert.assertEquals(actual_title,expectedTitle);
-//        Assert.assertTrue(isLoginButtonTextCapitalized);
-//        Assert.assertEquals(textOfDefaultDropDown,expectedDefaultDropDownText);
-//        Assert.assertTrue(isEqualToOne);
-//        Assert.assertTrue(isEqualToTwo);
+        Assert.assertTrue(isLoginPageTitleVisible);
+        Assert.assertTrue(isLoginButtonTextCapitalized);
+        Assert.assertEquals(textOfDefaultDropDown,expectedDefaultDropDownText);
+        Assert.assertTrue(isEqualToOne);
+        Assert.assertTrue(isEqualToTwo);
 
 
 
