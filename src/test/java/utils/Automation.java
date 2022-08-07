@@ -59,10 +59,10 @@ public class Automation {
         jsEngine.executeScript(jsCode,element);
     }
 
-    public static String getAttribute(By location){
+    public static String getAttribute(By location,String attribute){
         WebElement element=
                 waits.until(ExpectedConditions.visibilityOfElementLocated(location));
-        String placeholderAttribute =element.getAttribute("placeholder");
+        String placeholderAttribute =element.getAttribute(attribute);
         return  placeholderAttribute;
 
     }
@@ -100,9 +100,7 @@ public class Automation {
     }
     public static List<Double> getPriceList(By location){
         List<WebElement> dollarPriceList=
-                (List<WebElement>) waits.until
-                        (ExpectedConditions.visibilityOfElementLocated(location));
-
+                driver.findElements(location);
         List<Double> priceList=new ArrayList<>();
         for(WebElement p : dollarPriceList){
             priceList.add(Double.valueOf(p.getText().replace("$","")));

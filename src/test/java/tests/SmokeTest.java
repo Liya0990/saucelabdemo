@@ -27,7 +27,6 @@ import java.util.Map;
 public class SmokeTest extends UserLogin {
    private String username="standard_user";
    private String password="secret_sauce";
-   private static ExtentTest tcs= TestDetector.getCurrentTestCaseSection();
 
     // task 1 (NavigatetoSaucedemoVerifythetitleasSwagLabs)
     // task 3(Loginwithstandard_user&secret_sauce)
@@ -39,10 +38,11 @@ public class SmokeTest extends UserLogin {
 
         // ----Test Steps
         LoginPage login=new LoginPage();
+        login.open();
         boolean isLoginPageTitleIsVisible= login.loginPageTitleIsVisible();
 
-        String actual_title=login.getTitle();
-        System.out.println("the actual title: "+actual_title);
+      // String actual_title=login.getTitle();
+     //  System.out.println("the actual title: "+actual_title);
         // task 3
         login.enterUserName(username);
         login.enterPassword(password);
@@ -52,7 +52,7 @@ public class SmokeTest extends UserLogin {
       //  ----Test Assertion
         //task 1 ,
         Assert.assertTrue(isLoginPageTitleIsVisible);
-        Assert.assertEquals(actual_title,expectedTitle);
+        // Assert.assertEquals(actual_title,expectedTitle);
 
 
 
@@ -65,11 +65,12 @@ public class SmokeTest extends UserLogin {
 
         // ----Test Steps
         LoginPage login=new LoginPage();
-        String acrualLoginButtonText=login.getLoginButtonText();
-        System.out.println("the text"+acrualLoginButtonText);
+        login.open();
+        String acrualLoginButtonText=login.getLoginButtonAttribute();
+        System.out.println("the text: "+acrualLoginButtonText);
 
-//        boolean isLoginButtonTextCapitalized =
-//        Automation.isStringUpperCase(acrualLoginButtonText);
+        //boolean isLoginButtonTextCapitalized =
+        //Automation.isStringUpperCase(acrualLoginButtonText);
 
 
 
@@ -117,6 +118,7 @@ public class SmokeTest extends UserLogin {
         // ----Test Steps
 
         LoginPage login=new LoginPage();
+        login.open();
         login.enterUserName(username);
         login.enterPassword(password);
         login.clickLoginButton();
@@ -172,6 +174,7 @@ public class SmokeTest extends UserLogin {
 
         // ----Test Steps
         LoginPage login=new LoginPage();
+        login.open();
         login.enterUserName(username);
         login.enterPassword(password);
         login.clickLoginButton();

@@ -12,7 +12,9 @@ import java.util.List;
 import static utils.Automation.*;
 
 public class HomePage {
+
     private static ExtentTest tcs= TestDetector.getCurrentTestCaseSection();
+
 
     // Web Element location
     By loc_dropdown= By.cssSelector(".product_sort_container");

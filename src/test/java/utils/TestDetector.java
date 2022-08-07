@@ -63,6 +63,9 @@ public class TestDetector implements ITestListener {
     public void onTestFailure(ITestResult testCase){
         testCaseSection.fail("Test failed");
         testCaseSection.fail(testCase.getThrowable());
+        WebDriver driver = DriverUtil.getDriver();
+        String picture = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+        testCaseSection.addScreenCaptureFromBase64String(picture);
 //        String screenshotPic=DriverUtil.takeScreenshot();
 //        testCaseSection.addScreenCaptureFromBase64String(screenshotPic);
     }

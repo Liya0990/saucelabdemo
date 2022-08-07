@@ -16,8 +16,7 @@ public class UserLogin {
         WebDriver driver=DriverUtil.getDriver();
         Automation.init(driver);
 
-        LoginPage login=new LoginPage();
-        login.open();
+
 
     }
 

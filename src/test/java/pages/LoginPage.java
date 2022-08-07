@@ -12,7 +12,8 @@ public class LoginPage {
 
 
     // ----Web element locations-----//
-    private final  By loc_title= By.cssSelector(".login_logo");
+    //private final  By loc_title= By.cssSelector(".login_logo");
+    private final By loc_title=By.className("login_logo");
     private final By loc_username=By.cssSelector("input#user-name");
     private final By loc_password=By.cssSelector("input#password");
     private final By loc_loginButton=By.cssSelector("input#login-button");
@@ -34,6 +35,11 @@ public class LoginPage {
         return getText(loc_loginButton);
 
     }
+    public String getLoginButtonAttribute(){
+        return getAttribute(loc_loginButton,"value");
+
+    }
+
 
 
     public void enterUserName(String username){
@@ -48,7 +54,7 @@ public class LoginPage {
 
     public void clickLoginButton(){
         click(loc_loginButton);
-        tcs.info("user clicks login button");
+       tcs.info("user clicks login button");
     }
 
     public boolean loginPageTitleIsVisible(){
