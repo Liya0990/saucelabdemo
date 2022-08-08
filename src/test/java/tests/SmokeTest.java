@@ -28,8 +28,7 @@ public class SmokeTest extends UserLogin {
    private String username="standard_user";
    private String password="secret_sauce";
 
-    // task 1 (NavigatetoSaucedemoVerifythetitleasSwagLabs)
-    // task 3(Loginwithstandard_user&secret_sauce)
+
     @Test
     public void VerifyUserSuccessfullyLogin(){
         // ---- Test  date
@@ -41,8 +40,7 @@ public class SmokeTest extends UserLogin {
         login.open();
         boolean isLoginPageTitleIsVisible= login.loginPageTitleIsVisible();
 
-      // String actual_title=login.getTitle();
-     //  System.out.println("the actual title: "+actual_title);
+
         // task 3
         login.enterUserName(username);
         login.enterPassword(password);
@@ -57,7 +55,6 @@ public class SmokeTest extends UserLogin {
 
 
     }
-    // taks 2(Verify the login button text is capitalized)
     @Test
     public void verifyLoginButtonIsCapitalize(){
         // ---- Test  date
@@ -79,7 +76,6 @@ public class SmokeTest extends UserLogin {
        // Assert.assertTrue(isLoginButtonTextCapitalized);
 
     }
-    // Task 4(VerifydefaultfilterdropdownisA-Z)
     @Test
     public void verifyDefaultDropdown (){
         // ---- Test  date
@@ -99,17 +95,6 @@ public class SmokeTest extends UserLogin {
         Assert.assertEquals(textOfDefaultDropDown,expectedDefaultDropDownText);
 
     }
-
-    //5.Addthefirstproducttothecart
-    //6.Verify the cart badge has 1 product
-    //7.Add the last product to the cart
-    //8.Verify the cart badge value is increased
-    //9.Remove the first product from the cart
-    //10.Verifythecartbadgehas1product
-    //11.Click on the cart
-    //12.Verify the added product is available
-    //13.Click on the continue shopping
-    //14. Changethepricefilterfromlowtohigh
     @Test
     public void userAbleToPurchase(){
         // ---- Test  date
@@ -165,7 +150,6 @@ public class SmokeTest extends UserLogin {
 
 
     }
-    //Task 15(Verifythepricesortedproperly)
     @Test
     public void verifyPriceSortedProperly(){
         // ---- Test  date
