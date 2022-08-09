@@ -23,11 +23,12 @@ import java.util.Map;
 @Listeners(utils.TestDetector.class)
 public class SmokeTest extends UserLogin {
 
+
     @Test
     public void VerifyUserSuccessfullyLogin(){
         // ---- Test  date
         String expectedTitle="Swag Labs";
-        String expectedLoginButtonText="LOGIN";
+        String expectedLoginButtonText="Login";
         String username="standard_user";
         String password="secret_sauce";
         String expectedDefaultDropDownText="Name (A to Z)";
@@ -89,6 +90,7 @@ public class SmokeTest extends UserLogin {
         Assert.assertTrue(isEqualToTwo);
         Assert.assertTrue(isCartBadgeValueDropToOne);
         Assert.assertTrue(isTheAddedProductIsAvailableInChart);
+
         Assert.assertEquals(beforeFilterPriceList,afterFilterPriceList);
 
         softAssert.assertAll();
