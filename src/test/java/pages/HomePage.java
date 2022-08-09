@@ -29,8 +29,9 @@ public class HomePage {
 
     // User Actions
     public String getTextOfDefaultDropDown(){
-       return getFirstSelectedOption(loc_dropdown);
-       //return getText(loc_default_dropdown);
+      String result= getFirstSelectedOption(loc_dropdown);
+      tcs.info("verify the default drop down option as expected");
+      return result;
     }
     public void addFirstProductToChart(){
         click(loc_first_product);

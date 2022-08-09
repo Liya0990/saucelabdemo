@@ -11,7 +11,7 @@ import utils.DriverUtil;
 public class UserLogin {
 
     @BeforeMethod
-    public void userLogin(){
+    public void setUp(){
         DriverUtil.openBrowser("chrome");
         WebDriver driver=DriverUtil.getDriver();
         Automation.init(driver);

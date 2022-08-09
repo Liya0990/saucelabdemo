@@ -41,21 +41,31 @@ public class LoginPage {
     }
 
 
-
-    public void enterUserName(String username){
+    public void logIn(String username,String password){
         type(loc_username,username);
         tcs.info("user input username");
-    }
-    public void enterPassword(String password){
         type(loc_password,password);
         tcs.info("user input Password");
-
-    }
-
-    public void clickLoginButton(){
         click(loc_loginButton);
-       tcs.info("user clicks login button");
+        tcs.info("user clicks login button");
+
+
+
     }
+//    public void enterUserName(String username){
+//        type(loc_username,username);
+//        tcs.info("user input username");
+//    }
+//    public void enterPassword(String password){
+//        type(loc_password,password);
+//        tcs.info("user input Password");
+//
+//    }
+//
+//    public void clickLoginButton(){
+//        click(loc_loginButton);
+//       tcs.info("user clicks login button");
+//    }
 
     public boolean loginPageTitleIsVisible(){
         boolean result= isVisible(loc_title);
