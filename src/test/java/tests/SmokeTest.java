@@ -76,6 +76,8 @@ public class SmokeTest extends UserLogin {
        // Assert.assertTrue(isLoginButtonTextCapitalized);
 
     }
+
+
     @Test
     public void verifyDefaultDropdown (){
         // ---- Test  date
@@ -95,6 +97,9 @@ public class SmokeTest extends UserLogin {
         Assert.assertEquals(textOfDefaultDropDown,expectedDefaultDropDownText);
 
     }
+
+
+
     @Test
     public void userAbleToPurchase(){
         // ---- Test  date
@@ -136,20 +141,15 @@ public class SmokeTest extends UserLogin {
         homePage.selectByOption("Price (low to high)");
         Automation.sleep(2);
 
-
-
-
         //  ----Test Assertion
         Assert.assertTrue(isEqualToOne);
         Assert.assertTrue(isEqualToTwo);
         Assert.assertTrue(isCartBadgeValueDropToOne);
         Assert.assertTrue(isTheAddedProductIsAvailableInChart);
 
-
-
-
-
     }
+
+
     @Test
     public void verifyPriceSortedProperly(){
         // ---- Test  date
@@ -178,14 +178,6 @@ public class SmokeTest extends UserLogin {
 
         //  ----Test Assertion
         Assert.assertEquals(beforeFilterPriceList,afterFilterPriceList);
-
-
-
-
-
-
-
-
 
     }
 
