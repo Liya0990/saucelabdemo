@@ -22,10 +22,12 @@ import java.util.Map;
 
 @Listeners(utils.TestDetector.class)
 public class SmokeTest extends UserLogin {
+    private static ExtentTest tcs= TestDetector.getCurrentTestCaseSection();
 
 
     @Test
     public void VerifyUserSuccessfullyLogin(){
+
         // ---- Test  date
         String expectedTitle="Swag Labs";
         String expectedLoginButtonText="Login";
@@ -92,7 +94,6 @@ public class SmokeTest extends UserLogin {
         Assert.assertTrue(isTheAddedProductIsAvailableInChart);
 
         Assert.assertEquals(beforeFilterPriceList,afterFilterPriceList);
-
         softAssert.assertAll();
     }
 

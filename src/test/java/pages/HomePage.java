@@ -73,6 +73,7 @@ public class HomePage {
 
     public void selectByOption(String option){
         selectDropDown(loc_dropdown,option);
+        tcs.info("selected low to high  price option");
     }
 
 }// end: class
